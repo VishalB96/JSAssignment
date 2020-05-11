@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="section1">
+                <h1>task 1 :</h1>
+                <h3>Write a function whose job is to take 3 
+                    parameters and returns the heighest number.
+                </h3>
+                <hr>
+                
+                    <label for="">NUMBER 1</label><input type="text" id="num1"><br>
+                    <label for="">Number 2</label><input type="text" id="num2"><br>
+                    <label for="">Number 3</label><input type="text" id="num3"><br>
+                    <button id="submit" onclick="greatest1()">SUBMIT</button>
+                    <p>greatest number is : <span id="answer1"></span></p>
+                    
+
+               
+
+            </div>
+            <div class="section2">
+                <h1>task 2 :</h1>
+                <h3>On button click, display your name in browser console and alert
+                </h3>
+                <hr> 
+                <button id="submit3" onclick="printMyName1">CLICK FOR MY NAME</button>
+            </div>
+            <div class="section3">
+                <h1>task 3 :</h1>
+                <h3>PRINT your name 5 times using h1 to h5 dynamically.</h3>
+                <hr> 
+                <button id="submit4" onclick="printMyName2">CLICK to print 5 times</button>
+                <div id="op"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /*-------------------------------------task 1------------------------------*/
+        var a,b,c,name="VISHAL SUNIL BHONSLE",i;
+        
+        
+        function greatest1(){
+            
+            a = document.getElementById("num1").value;
+            //alert(a);
+            b = document.getElementById("num2").value;
+           // alert(b);
+            c = document.getElementById("num3").value;
+           // alert(c);
+            document.getElementById("answer1").innerHTML = greatestOf3();
+            
+        }
+        function greatestOf3(){
+            if(a > b){
+                if(a > c){
+                    return a;
+                }
+                else{
+                    return c;
+                }
+            }
+            else if(b > c){
+                return b;
+            }else {
+                return c;
+            }
+        }
+    /*------------------------------task 2------------------------------*/
+    alert(name);
+        function printMyName1(){
+            console.log(name);
+            alert(name);
+        }
+    /*------------------------------task 3-----------------------------------*/
+
+        function printMyName2(){
+            i=1;
+            alert("<h"+i+">"+name+"</h"+i+">");
+                
+            for(i=1;i<=5;i++){
+                document.getElementById("op").innerHTML = 
+                "<h"+i+">"+name+"</h"+i+">";
+            }
+        }
+        
+    </script>
+</body>
+</html>
