@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 2 assignment</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"><h1 style="text-align: center;">DAY2</h1>
+            
+        </div>
+        <div class="containt">
+            <div class="section section1">
+                <h3>1 . Create an array having 10 numbers , 
+                    write a function whose  job is to return max number from the array
+                </h3>
+                <h3>2. Create an array having 10 numbers and display it in ascending order</h3>
+                <label for="">Enter numbers : </label><input type="number" name="" id="array1">
+                <button id="btn1" onclick="arrayFill()">NEXT NUMBER</button>
+                <button id="btn2" onclick="maxNumberWithSort()" style="display: none;">FIND GREATEST NUMBER</button>
+                <p><span id="dispArr1" style="display: none;"></span></p>
+                <p><span id="dispArr2" style="display: none;"></span></p>
+                <span id="rem"></span>
+            </div>
+
+
+            <div class="section section2">
+                <h3>On button click print your name in P tag</h3>
+            <button onclick="printName()">click to print my name</button>
+            <p id="pName"></p>
+            </div>
+
+
+            <div class="section section3">
+                <h3>Write your name on page but keep it hidden. On button click it should unhide your name</h3>
+                <p>MY NAME IS HIIDEN HERE ====> <span style="display: none;" id="spanName">VISHAL SUNIL BHONSLE</span></p>
+                <button onclick="spanName.style.display = 'inline-block'">CLICK ME</button>
+            </div>
+
+
+            <div class="section section4">
+                <h3>Write your name with font size 4. On button click change it to 7</h3>
+                <p id="pName2" style="font-size: 16px;">VISHAL SUNIL BHONSLE</p>
+                <button onclick="pName2.style.fontSize = '24px'">Click to increase font size</button>
+            </div>
+
+
+            <div class="section section5">
+                <h3>On button click, display current date time in browser.</h3>
+                <button onclick="date1.innerHTML = new Date().toLocaleString()">Click to get date</button><span id="date1"></span>
+            </div>
+
+            <div class="section section6">
+                <h3>Create two text boxes and a button , 
+                    on button click it should copy data from one text box to another
+                </h3>
+                <input type="text" id="copy1">
+                <button onclick="copyContent()">COPY</button>
+                <input type="text" id="copy2">
+            </div>
+
+            <div class="section section7">
+                <h3>Create an array having 5 names and display it in descending order</h3>
+                <label for="">ENTER NAMES : </label>
+                <input type="text" name="" id="nameArray"><span id="warr"></span>
+                <button onclick="arrayFill2()" id="btn4">NEXT NAME</button>
+                <button onclick="arraySort2()">SORT IN DECENDING</button>
+                <p><span id="dispNameArr1"></span></p>
+                <p><span id="dispNameArr2"></span></p>
+
+            </div>
+
+            <div class="section section8">
+                <h3>• Declare a string   having an email Id and check if @ is there in the string or not
+                    • Declare a string having a 10 digit mobile number. 
+                    Wwrite a function whose  job is to check if it has 10 digits or not
+                    </h3>
+                    <label for="">EMAIL</label><input type="text" placeholder="xyz@aaa.qwe" id="email">
+                    <span id="warr2"></span><br>
+                    <label for="">Number</label><input type="text" placeholder="Enter 10 digits" id="number">
+                    <span id="warr3"></span><br>
+                    <button onclick="validate1()">Validate</button>
+            </div>
+
+            <div class="section section9">
+                <h3>Write a function whose  job is to return a random number</h3>
+                <button onclick="gen1.innerHTML = Math.floor(Math.random() * 10001)">CLICK TO GENERATE RANDOM NUMBER</button>
+                <p>Random number : <span id="gen1"></span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        /*-------------------------------INITIALIZATIONS--------------------------------*/
+        var arr1 = [];
+        var arr2 = [];
+        var i=0,j=0,size1,size2;
+        var email,num;
+        var name = "VISHAL SUNIL BHONSLE";
+
+
+        /*-----------------------------Task1-------------------------------------------------*/
+        
+        function arrayFill(){
+            if(arr1.length<=10){
+                arr1[i] = document.getElementById("array1").value;
+                document.getElementById("rem").innerHTML = ("Element: " + arr1[i] + " Added at index " + i);
+                i++;
+                document.getElementById("array1").value = "";
+                if(i==10){
+                    document.getElementById("dispArr1").innerHTML = "Entered array is : " + arr1;
+                    document.getElementById("dispArr1").style.display = "block";
+                document.getElementById("rem").innerHTML = "ARRAY IS FULL";
+                document.getElementById("btn2").style.display = "block";
+                document.getElementById("btn1").style.display = "none";
+                }
+            }
+            else {
+                
+            }
+        }
+
+        function maxNumberWithSort(){
+            size1 = arr1.length;
+            //alert ( size1 );
+            arr1.sort(function(a,b){return a-b});
+           // alert(arr1[size1-1]);
+           document.getElementById("dispArr2").innerHTML = "Array afte sorting : " + arr1;
+           document.getElementById("dispArr2").style.display = "block";
+            document.getElementById("rem").innerHTML = 
+            "<h4>THE GREAEST NUMBER IS : "+ arr1[size1-1]+"</h4>";
+        }
+
+        /*-----------------------------------task 2-------------------------------*/
+        function printName(){
+            document.getElementById("pName").innerHTML = name;
+        }
+        /*--------------------------------------task 6-----------------------------------------*/
+        function copyContent(){
+            document.getElementById("copy2").value = 
+            document.getElementById("copy1").value;
+        }
+        /*---------------------------------------------task 8------------------------------------*/
+        function arrayFill2(){
+            size2 = arr2.length;
+            if(size2<=5){
+               arr2[j] = document.getElementById("nameArray").value;
+               document.getElementById("dispNameArr1").innerHTML = arr2;
+               document.getElementById("nameArray").value = "";
+               j++;
+               if(j==5){
+                    document.getElementById("warr").innerHTML = "ARRAY IS FULL";
+                    document.getElementById("btn4").style.display = "none";
+               }
+            }
+        }
+        function arraySort2(){
+            arr2.sort();
+            arr2.reverse();
+            document.getElementById("dispNameArr2").innerHTML = arr2;
+        }
+        /*------------------------------------task 9 validation----------------------------------*/
+        function validate1(){
+            email = document.getElementById("email").value;
+            num = document.getElementById("number").value;
+            if(email == null || email == "" ){
+                document.getElementById("warr2").innerHTML = "EMAIL is empty";
+
+            }else if(email.indexOf("@") < 0){
+                document.getElementById("warr2").innerHTML = "Enter a VALID EMAIL which contains '@''";
+            }else {
+                document.getElementById("warr2").innerHTML = "Email is VALID";
+            }
+
+            if(num.length < 10 || num == "" ){
+                document.getElementById("warr3").innerHTML = "ENTER 10 digits mobile number";
+            }else if(num.length == 10){
+                document.getElementById("warr3").innerHTML = "Number is VALID";
+            }
+
+        }
+    </script>
+</body>
+</html>
