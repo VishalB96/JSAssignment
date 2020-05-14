@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>DAY 4</h1>
+        </div>
+        <div class="containt">
+
+            <div class="section section1">
+                <h3> 
+                    Using arrow function, print factorial of a number
+                </h3>
+                <label for="">Enter a number to find the factorial</label>
+                <input type="text" id="in1">
+                <button onclick="fact()">FACTORIAL</button>
+                <span id="sp1"></span>
+            </div>
+
+
+            <div class="section section2">
+                <h3>Create class Account having property name, balance. Write method deposit 
+                whose job is to increase balance with the amount deposited by user. 
+                Create two object sand call deposit method. Write method display which will display name and balance</h3>
+                <div class="bank1">
+                    <div id="bank1sec1">
+                        <h4>ACCOUNT 1</h4>
+                        <label for="">Enter Name1 : </label>
+                        <input type="text" id="in2name1">
+                        <label for="">Enter Initial Balance : </label>
+                        <input type="text" id="in2balance1"><br>
+                        <h4>ACCOUNT 2</h4>
+                        <label for="">Enter Name1 : </label>
+                        <input type="text" id="in2name2">
+                        <label for="">Enter Initial Balance : </label>
+                        <input type="text" id="in2balance2"><br>
+                        <button onclick="createObj1()">CREATE</button>
+                    </div>
+
+                    <div id="bank1sec2">
+                        <div>
+                            <h4>ACCOUNT 1 DETAILS</h4>
+                            <p id="bank1acc1"></p>
+                            <input type="text" name="" id="bank1depo1" placeholder="DEPOSIT">
+                            <button onclick="depositBank1()">DEOPSIT</button>
+                        </div>
+                        <div>
+                            <h4>ACCOUNT 1 DETAILS</h4>
+                            <p id="bank1acc2"></p>
+                            <input type="text" name="" id="bank1depo2" placeholder="DEPOSIT">
+                            <button onclick="depositBank1()">DEPOSIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="section section3">
+                <h3>
+                Create class math having two static methods, cube and square, 
+                    whose job is to return the square and cube of a number
+            </h3></div>
+
+
+            <div class="section section4">
+                <h3>Create class Account having instance member name , balance . 
+                    It has method deposit whose job is to increase balance. 
+                    Create a child class current account inheriting from Account class. 
+                    It has method withdraw whose job is to  reduce the balance. 
+                    Create two objects of current account and call deposit and withdraw method. 
+                    Child class has show method whose job is to display name and new balance.
+                </h3>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        /*--------------------------------------------initialization---------------------------------------*/
+        var i,no;
+        no = document.getElementById("in1").value;
+
+        /*----------------------------------task 1--------------------------------------------------------*/
+        
+        const factorial = (n) => {
+            if ((n === 0) || (n === 1)) {
+                return 1;
+            }
+                else {
+                    return (n * factorial(n - 1));
+                }
+            }
+
+            function fact(){
+                document.getElementById("sp1").innerHTML = 
+                "The factorial is : " +
+                factorial(document.getElementById("in1").value);
+            }
+
+/*-----------------------------------------------------------class account -------------------------------------*/
+
+            class account {
+                constructor (_name,_balance){
+                    this.name = _name;
+                    this.balance = _balance;
+                }
+
+                deposit (_deposit){
+                    this.balance = this.balance + parseInt(_deposit);
+                }
+
+                display (){
+                    return "NAME : " + this.name + " BALANCE : " + this.balance;
+                }
+            }
+
+            
+
+
+
+
+            /*--------------------------------------------function obj creation 1-----------------------------*/
+
+            function createObj1(){
+                let n1 = document.getElementById("in2name1").value;
+                let b1 = document.getElementById("in2balance1").value;
+                let n2 = document.getElementById("in2name2").value;
+                let b2 = document.getElementById("in2balance2").value;
+                ac1 = new account (n1,b1);
+                ac2 = new account (n2,b2);
+                document.getElementById("bank1acc1").innerHTML = ac1.display();
+                document.getElementById("bank1acc2").innerHTML = ac2.display();
+            }
+
+            function depositBank1(){
+                let d1 = document.getElementById("bank1depo1").value;
+                let d2 = document.getElementById("bank1depo2").value;
+                if(d1 != "")
+                {
+                    ac1.deposit(parseInt(d1));
+                    document.getElementById("bank1acc1").innerHTML = 
+                    ac1.display() + "<span style = 'color : red;'>UPDATED</span>";
+
+                }
+                if(d2 != "")
+                {
+                    ac2.deposit(d2);
+                    document.getElementById("bank1acc2").innerHTML = 
+                    ac2.display() + "<span style = 'color : red;'>UPDATED</span>";
+                    
+                }
+                
+                
+            }
+
+    </script>
+</body>
+</html>
