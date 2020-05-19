@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATOR</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 50%;
+            padding: 5px;
+            margin: 5px;
+        }
+        #submit{
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contain">
+            <div class="header"><h1 style="text-align: center;">FORM VALIDATION</h1></div>
+            <div class="section">
+                <form name="form1" action="" method="self">
+                    <input type="text" name="uid" id="uid" placeholder="USER ID" onkeyup="valuid()" required>
+                    <span id="war1"></span><br>
+                    <input type="password" name="password" id="pass" placeholder="PASSWORD" onkeyup="valpass()" required>
+                    <span id="war2"></span><br>
+                    <input type="number" name="mobile" id="mob" placeholder="MOBILE NUMBER" onkeyup="valmob()" required>
+                    <span id="war3"></span><br>
+                    <input type="textarea" id="address" placeholder="ADDRESS" required><br>
+                    <input type="number" name="age" id="age" placeholder="AGE" onkeyup="valage()" required>
+                    <span id="war4"></span><br>
+                    <input type="submit" value="SUBMIT" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        /*-----------------------------------val1---------------------------------------------------------*/
+        function valuid(){
+            let x = document.forms['form1']['uid'].value;
+            let y = document.getElementById("war1");
+            //alert(x);
+            if(x != "" || x!= NULL){
+                if(x.length > 2 && x.length < 16){
+                    y.innerHTML = "Accepted!";
+                    y.style.color = "green";
+                }
+                else{
+                    y.innerHTML = "User Id shoud be 3 to 15 characters long!";
+                    y.style.color = "red";
+                }
+            }
+        }
+
+        /*------------------------------val2--------------------------------------------------------*/
+
+        function valpass(){
+            let x = document.forms['form1']['password'].value;
+            let y = document.getElementById("war2");
+            if(x != "" || x!= NULL){
+                if( x.length < 8){
+                    y.innerHTML = "Password should be 8 characters long";
+                    y.style.color = "red";
+                }else{
+                    y.innerHTML = "Accepted!";
+                    y.style.color = "green";
+                }
+            }
+        }
+
+        /*----------------------------------------------------val3--------------------------------------*/
+
+        function valmob(){
+            let x = document.forms['form1']['mobile'].value;
+            let y = document.getElementById("war3");
+
+            if(x != "" || x!= NULL){
+                if(isNaN(x)){
+                    y.innerHTML = "Please enter numbers only!";
+                    y.style.color = "red";
+                }
+                if(x.length != 10){
+                    y.innerHTML = "Please enter 10 digit mobile number!"
+                    y.style.color = "red";
+                }else{
+                    y.innerHTML = "Accepted!";
+                    y.style.color = "green";
+                }
+            }
+        }
+        /*--------------------------------------val4---------------------------------------------------------*/
+
+        function valage(){
+            let x = parseInt(document.forms['form1']['age'].value);
+            //alert(typeof(parseInt(x)));
+            let y = document.getElementById("war4");
+
+            if( x!= "" || x != NULL ){
+                if(isNaN(x)){
+                    y.innerHTML = "Please enter proper age in numeric value!";
+                    y.style.color = "red";
+
+                }
+                if( x >= 18 && x <= 100){
+                    y.innerHTML = "Approved!";
+                    y.style.color = "green";
+                    
+                    
+                }else{
+                    y.innerHTML = "User should be between 18 and 100 in age!";
+                    y.style.color = "red";
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>
