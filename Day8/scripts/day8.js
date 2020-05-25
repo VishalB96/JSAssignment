@@ -30,7 +30,7 @@ class Employee{
     set setsalary(_salary){
         this.salary=_salary;
     }
-    get netSal(){
+    get getNetSalary(){
         return (this.salary-(this.salary*(0.1)));
     }
     get getId(){
@@ -93,7 +93,7 @@ class Student{
         this.marks3=_marks3;
     }
     get getTotal(){
-        this.total=this.marks1+this.marks2+this.marks3;
+        this.total=parseInt(this.marks1)+parseInt(this.marks2)+parseInt(this.marks3);
         return this.total;
     }
     get getPercentage(){
@@ -114,3 +114,57 @@ class Student{
 obj2 = new Student();
 
 /*----------------------------------------------functions------------------------------------------------------- */
+
+
+
+function objCreate1() {
+    let i1 = document.getElementById("eid1").value;
+    let i2 = document.getElementById("eid2").value;
+    let n1 = document.getElementById("ename1").value;
+    let n2 = document.getElementById("ename2").value;
+    let s1 = document.getElementById("esalary1").value;
+    let s2 = document.getElementById("esalary2").value;
+
+    emp1 = new Employee();
+    emp2 = new Employee();
+
+    emp1.setid = i1;
+    emp1.setname = n1;
+    emp1.setsalary = s1;
+
+    emp2.setid = i2;
+    emp2.setname = n2;
+    emp2.setsalary = s2;
+    
+    document.getElementById("op1").innerHTML = 
+    "<h4>Employee name : " + emp1.getName + 
+    "<br>Employee Net-Salary : " + emp1.getNetSalary + "</h4><br>";
+
+    document.getElementById("op2").innerHTML = 
+    "<h4>Employee name : " + emp2.getName + 
+    "<br>Employee Net-Salary : " + emp2.getNetSalary + "</h4><br>";
+}
+
+/*--------------------------------fun2--------------------------------------------- */
+
+function objCreate2() {
+    let rn1 = document.getElementById("srno").value;
+    let n1 = document.getElementById("sname").value;
+    let m1 = document.getElementById("smarks1").value;
+    let m2 = document.getElementById("smarks2").value;
+    let m3 = document.getElementById("smarks3").value;
+
+    s1 = new Student();
+
+    s1.setRollNumber = rn1;
+    s1.setName = n1;
+    s1.setMarks1 = m1;
+    s1.setMarks2 = m2;
+    s1.setMarks3 = m3;
+
+    document.getElementById("op3").innerHTML = 
+    "<h4>NAME : " + s1.getName + 
+    "<br>Total : " + s1.getTotal +
+    "<br>Percentage : " + s1.getPercentage
+    "</h4>";
+}
