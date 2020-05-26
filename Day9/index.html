@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 9</title>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 5px;
+            margin: 5px;
+        }
+        #overlay{
+            /* display: none; */
+        }
+        .overlay{
+            background-color: rgba(13, 23, 51, 0.9);
+            position:absolute;
+            
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+        }
+        .overlay:hover{
+            cursor: pointer;
+        }
+        .sec1{
+            height: 25%;
+            visibility: hidden;
+        }
+        .sec{
+            margin: 0 auto;
+            background-color: #ffffff;
+            height: 25%;
+            width: 25%;
+            padding: 50px;
+            
+        }
+        #name{
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 20px;
+            font-size: large;
+        }
+        #closebtn{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+           color: red;
+           font-size: 50px;
+           
+        }
+        #closebtn:hover{
+            cursor: pointer;
+            font-size: 60px;
+            
+        }
+        #op1{
+            font-weight: 900;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <!-- <div id="overlay" class="overlay" onclick="close()"><button onclick="close()">sdasdasdad</button><span id="closebtn" onclick="close(this)">Close x</span>
+        <div class="sec1"></div>
+        <div class="sec">
+            <h3 style="text-align: center;">Enter your name</h3>
+            
+            <input type="text" placeholder="NAME" id="name" onblur="fname = this.value;">
+            
+        </div>
+    </div> -->
+    <div class="wrapper">
+        <div class="header"><h4>*Day 9:*
+            • write a self invoking function  whose job is to print your name.
+            • write a self invoking function whose job is to return square of a number
+            • write a function sum with no parameter but it will do the sum of numbers 
+            passed in function call eg sum(2,3,5), sum(2,4). 
+            So your definition will work irrespective of the number of parameters passed</h4></div>
+        <div class="section section1">
+            <h4>• write a self invoking function  whose job is to print your name.</h4>
+            <p>Watashino namaeha <span id="op1"></span> desu</p>
+        </div>
+        <div class="section section2">
+            <h4>• write a self invoking function whose job is to return square of a number</h4>
+            <input type="number" onkeyup="sqrOfno()" id="num1" placeholder="Enter a number to Square it">
+            <button id="btn1" onclick="sqrOfno()">Square</button>
+            <span id="op2"></span>
+        </div>
+        <div class="section section3">
+            <h4>• write a function sum with no parameter but it will do the sum of numbers 
+                passed in function call eg sum(2,3,5), sum(2,4). 
+                So your definition will work irrespective of the number of parameters passed</h4>
+                <input type="number" name="num2" id="num2" placeholder="Enter number 1"> 
+                <input type="number" name="num3" id="num3" placeholder="Enter number 2">
+                <input type="number" name="num4" id="num4" placeholder="Enter number 3">
+                <button id="btn2" onclick="funcall()">ADD</button>
+                <span id="op3"></span>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
+<!-- <h1>Enter Your name : </h1> 
+<input type="text" id="name" onblur="name=name.value;"> -->
