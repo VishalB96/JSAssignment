@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY10-11-12</title>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            background-color: #eeeeee;
+            color: #333;
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section{
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+                <h1>Day 10 , 11 & 12</h1>
+        </div>
+
+        <div class="content">
+            <div class="section section1">
+                <h3>• Write your name in red colour , 
+                    on a button click it should change the text colour to blue
+                </h3>
+                <p id="op1" style="color:red;">VISHAL</p>
+                <button id="btn1" value="BLUE" onclick="change1()">blue</button>
+                
+            </div>
+
+            <div class="section section2">
+                <h3>
+                    • Write your name in h1 tag align it to the left, 
+                    on button click it should align to right
+                </h3>
+                <h1 id="op2" style="text-align: left;">VISHAL</h1>
+                <button id="btn2" value="right" onclick="change2()">right</button>
+            </div>
+
+            <div class="section section3">
+                <h3>• Write your name in p tag with background colour blue and text in white colour , 
+                    on button click it should reverse the colour 
+                    ie. Text colour blue and background colour white</h3>
+                    <p id="op3" style="color: white;background-color: blue;">VISHAL</p>
+                    <button id="btn3" onclick="change3()">SWITCH</button>
+            </div>
+            
+            <div class="section section4">
+                <h3>• Create three radio buttons which show names of colour. Create a text box. 
+                    Let user enter name in text box and select radio button , 
+                    on clicking the text in a text box should get respective colour.</h3>
+                    <input type="text" name="" id="op4" placeholder="Enter your name"><br>
+                    <input type="radio" name="color" id="radio1" value="red" onclick="change4(this.value)"><label for="red">red</label>
+                    <input type="radio" name="color" id="radio3" value="green" onclick="change4(this.value)"><label for="green">green</label>
+                    <input type="radio" name="color" id="radio2" value="blue" onclick="change4(this.value)"><label for="blue">blue</label>
+                    
+            </div>
+
+            <div class="section section5">
+                <h3>
+                    • Create a dropdown box showing the number 1 to 10. 
+                    Write your name in p tag let user select option from dropdown 
+                    and that font size should be applied to the data in p tag
+                </h3>
+                <p id="op5" style="font-size: 1em;">VISHAL <span id="op5_1"></span></p>
+                <select name="size" id="size1">
+                    <option value="1" onclick="change5(this.value)">1</option>
+                    <option value="2" onclick="change5(this.value)">2</option>
+                    <option value="3" onclick="change5(this.value)">3</option>
+                    <option value="4" onclick="change5(this.value)">4</option>
+                    <option value="5" onclick="change5(this.value)">5</option>
+                    <option value="6" onclick="change5(this.value)">6</option>
+                    <option value="7" onclick="change5(this.value)">7</option>
+                    <option value="8" onclick="change5(this.value)">8</option>
+                    <option value="9" onclick="change5(this.value)">9</option>
+                    <option value="10" onclick="change5(this.value)">10</option>
+                </select>
+            </div>
+
+            <div class="section section6">
+                <h3>• Create three text boxes and two radio buttons showing value “add” and “subtract”. 
+                    Let user enter number in two text boxes 
+                    and as per the selected radio button it should display result in the 3rd text box.</h3>
+                    <input type="number" name="" id="num1">
+                    <input type="number" name="" id="num2">
+                    <input type="number" name="" id="op6"><br>
+                    <input type="radio" name="math" id="sum" 
+                    onclick="op6.value = parseInt(num1.value)+parseInt(num2.value)">
+                    <label for="add">ADDITION</label>
+                    <input type="radio" name="math" id="subtract" onclick="op6.value = num1.value-num2.value">
+                    <label for="subtract">SUBTRACT</label>
+            </div>
+
+            <div class="section section7" id="section7">
+                <h3>
+                    Write at least 3 paragraph about yourself. 
+                    Create a button on click it should count number of p tags used in document. 
+                    Also give blue background colour to all p tags.
+                </h3>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis distinctio dolorem sequi quisquam expedita quaerat facilis eum dolorum possimus debitis, vel ipsum, cumque ducimus soluta, accusantium consequuntur? Maiores, ullam sed?</p>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, odio voluptate iste dolores dicta rem libero sequi fuga necessitatibus sed animi quas illo vitae mollitia quibusdam atque accusamus omnis quo, alias dolorem! Dolorem, ea. Officia distinctio omnis non repudiandae perferendis.</p>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus exercitationem dolorem nulla impedit culpa accusantium facilis nam cumque? Maxime voluptas libero officiis. Ipsa magni deleniti dolorum distinctio perspiciatis vel, sequi laudantium vero inventore facere quod ea molestiae hic aliquid molestias debitis labore a veritatis blanditiis neque, odio incidunt. Ipsam, recusandae itaque! Error dolorem cupiditate optio, aperiam nulla corporis natus asperiores quam, accusantium modi, magnam obcaecati aspernatur molestias aut facilis expedita quis sint hic? Illum assumenda asperiores tempore quidem itaque tempora possimus suscipit similique minus dolores. Voluptatem, non.
+                </p>
+                <span id="op7"></span>
+                <button onclick="change7()">CLICK</button>
+            </div>
+            <div class="section section8"></div>
+            <div class="section section9"></div>
+            <div class="section section10"></div>
+            <div class="section section11"></div>
+            <div class="section section12"></div>
+        </div>
+    </div>
+</body>
+</html>
