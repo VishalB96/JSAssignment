@@ -62,16 +62,30 @@ function change7(){
      
 
     let z = y.childNodes;
-    alert(z.length);
-
+    
     for(let i = 0 ; i<z.length;i++){
-        if(z[i].nodeName == 'p'){
+        if(z[i].nodeName.toLowerCase() == 'p'){
             z[i].style.backgroundColor = "blue";
         }
     }
-         
-   
+}
 
+/*-------------------------------------task 8 start---------------------------------*/
 
+function change8(){
+    let parent = document.getElementById("ol1");
+    let node = parent.childNodes;
+
+    parent.removeChild(node[0]);
+    parent.removeChild(node[1]);
+    
+}
+/*--------------------------------------------task 10-----------------------------------*/
+
+function change10(x){
+
+    if(x==""){
+        document.getElementById("op10").innerHTML = "INPUT CANT BE EMPTY";
+    }
 }
 

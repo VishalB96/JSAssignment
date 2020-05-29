@@ -117,10 +117,53 @@
                 <span id="op7"></span>
                 <button onclick="change7()">CLICK</button>
             </div>
-            <div class="section section8"></div>
-            <div class="section section9"></div>
-            <div class="section section10"></div>
-            <div class="section section11"></div>
+
+
+            <div class="section section8">
+                <h3>• Write your friends name using OL tag. 
+                    Create a button whose job is to delete the 1st name from the OL tag.
+                </h3>
+                <ol id="ol1">
+                    <li>RUCHIT</li>
+                    <li>ADITYA</li>
+                    <li>KRUTIKA</li>
+                    <li>NEHA</li>
+                    <li>PRIYESH</li>
+                    <li>VINIT</li>
+                </ol>
+                <button id="btn8" onclick="change8()">DELETE 1ST NAME</button>
+            </div>
+
+            
+            <div class="section section9">
+                <h3>
+                    • Create a textbox ,and a span tag, 
+                    on change event on text box it should 
+                    display data entered in text box in span tag which is next to it text box.
+                </h3>
+                <input type="text" id="txt9" placeholder="ENTER DATA HERE" onkeyup ="op9.innerHTML = this.value">
+                <span id="op9"></span>
+            </div>
+            <div class="section section10">
+                <h3>
+                    • Create text box and a span tag , 
+                    on change it should give error if user keeps text box empty.
+                </h3>
+            <input type="text" id="txt10" placeholder="ENTER DATA HERE" onchange ="change10(this.value)">
+                <span id="op10"></span>
+            </div>
+
+            <div class="section section11">
+                <h3>
+                    • Create text box and a span tag ask user to enter password . 
+                    Rule for password is
+                        o It must have at least one capital character
+                        o It must have at least one digit
+                        o It must have at least 1 special symbol
+                    On change event it should display appropriate error message
+                    For example if user enters “Vita” error should be "please use one digit use one symbol."
+                </h3>
+            </div>
             <div class="section section12"></div>
         </div>
     </div>
