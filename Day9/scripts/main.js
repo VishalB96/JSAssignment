@@ -14,6 +14,11 @@ var fname = "VISHAL";
 /*------------------------------task2--------------------------------------------------- */
   function sqrOfno(){
       var num1 = document.getElementById("num1").value;
+      if(num1==0){
+        document.getElementById("op2").innerHTML = 
+        "<h3>The square of " + num1 +" is : "+num1+"   WHAT ELSE IT WOULD BE \"0 * 0 = 0\" NOT INFINITY</h3>";
+      }
+      
       if(num1!= 0 || num1 != NULL){
         
           (function(){
