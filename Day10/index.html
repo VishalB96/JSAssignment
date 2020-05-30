@@ -163,8 +163,23 @@
                     On change event it should display appropriate error message
                     For example if user enters “Vita” error should be "please use one digit use one symbol."
                 </h3>
+                <input type="password" name="" id="pass1" onkeyup="validatePassword(this.value)">
+                <span id="op11"></span>
+            </div>  
+
+            <div class="section section12">
+                <h3>
+                    Create three check boxes showing book name and price. Create a text box. 
+                    As per selection of check box , text box should show total of selected price.
+                </h3>
+                <input type="checkbox" name="book1" id="check1" value="800" onclick="change12()">
+                <label for="book1">BOOK 1 : Rs 800</label>
+                <input type="checkbox" name="book2" id="check2" value="750" onclick="change12()">
+                <label for="book2">BOOK 2 : Rs 750</label>
+                <input type="checkbox" name="book3" id="check3" value="930" onclick="change12()">
+                <label for="book3">BOOK 3 : Rs 930</label> <br>
+                <input type="text" id="op12" placeholder="Total cost will display here">
             </div>
-            <div class="section section12"></div>
         </div>
     </div>
 </body>

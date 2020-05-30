@@ -88,4 +88,53 @@ function change10(x){
         document.getElementById("op10").innerHTML = "INPUT CANT BE EMPTY";
     }
 }
+/*-----------------------------------------------task 11------------------------------*/
+
+function validatePassword(x){
+    let reg = /^(?=.*\d)(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    let pat = document.getElementById("op11");
+    let span = document.createElement("span");
+   
+        if(x.match(reg)){
+        
+        pat.innerHTML = "accepted!";
+        pat.style.color = "green";
+    }else {
+        pat.innerHTML ="Please enter valid password";
+        pat.style.color = "red";
+    }
+    // alert(x);
+
+    // if(x.match(/(?!\d)/)){
+    //     pat.innerHTML = "number not found";
+    // }
+    // else{
+    //     pat.innerHTML = "Enter a number";
+    // }
+}
+
+/*----------------------------task 12------------------------------------------------*/
+
+function change12(){
+    let sum = 0,i=0;
+    let a = document.getElementById("check1");
+    let b = document.getElementById("check2");
+    let c = document.getElementById("check3");
+    let values = [a.value,b.value,c.value];
+    let flag = [a.checked,b.checked,c.checked];
+   
+
+    while(i<3){
+        
+        if(flag[i]){
+            sum+=parseInt(values[i]);
+        }else{
+            i++;
+            continue;
+        }
+        document.getElementById("op12").value = sum;
+        i++;
+    }
+    
+}
 
