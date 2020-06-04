@@ -19,6 +19,7 @@
                 background-size: cover;
                 
             }
+            
             .slide1{
                 background-image: url("images/01.jpg");
             }
@@ -31,15 +32,92 @@
             .slide4{
                 background-image: url("images/04.jpeg");
             }
+            .left, .right {  
+                cursor: pointer;  
+                position: absolute;  
+                top: 50%;  
+                width: auto;  
+                padding: 16px;  
+                margin-top: -22px;  
+                color: white;  
+                font-weight: bold;  
+                font-size: 18px;  
+                transition: 0.6s ease;  
+                border-radius: 0 3px 3px 0;  
+            }  
+            .right {  
+                right: 0;  
+                border-radius: 3px 0 0 3px;  
+            }  
+                .left:hover, .right:hover {  
+                    background-color: rgba(115, 115, 115, 0.8);  
+                }  
+
+
+            .fadeout{
+                -webkit-animation-name: fadeout;  
+                -webkit-animation-duration: 4s;  
+                animation-name: fadeout;  
+                animation-duration: 4s; 
+            }
+
+            @-webkit-keyframes fadeout{
+                from{
+                    opacity: 1;
+                }
+                to {
+                    opacity: .5;
+                }
+            }
+
+            @keyframes fadeout{
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: .5;
+                }
+            }
+
+            .fade {  
+                -webkit-animation-name: fade;  
+                -webkit-animation-duration: 2s;  
+                animation-name: fade;  
+                animation-duration: 2s;  
+            }  
+            @-webkit-keyframes fade {  
+                from {  
+                    opacity: .5 
+                }  
+                to {  
+                    opacity: 1  
+                }  
+            }  
+            
+            @keyframes fade {  
+                from {  
+                    opacity: .5  
+                }  
+                to {  
+                    opacity: 1  
+                }  
+            }  
+
+            
     </style>
 </head>
 <body>
     
-        <div class="slide slide1"></div>
-        <div class="slide slide2"></div>
-        <div class="slide slide3"></div>
-        <div class="slide slide4"></div>
-
+        <div class="container" id="container1">
+            <div class="slide slide1 fadeout fade" id="s1"></div>
+            <div class="slide slide2 fadeout fade" id="s2"></div>
+            <div class="slide slide3 fadeout fade" id="s3"></div>
+            <div class="slide slide4 fadeout fade" id="s4"></div>
+        </div>
+        <a class="left" onclick="nextSlide(-1)">❮</a>  
+            <a class="right" onclick="nextSlide(1)">❯</a>  
+        
+        
     
 </body>
 </html>
