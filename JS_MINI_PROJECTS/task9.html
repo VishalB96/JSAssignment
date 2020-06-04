@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        input{
+            margin: 20px 10px;
+            border: none;
+            width: min-content;
+            border-bottom: 1px solid #333;
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="content">
+            <div class="sub_content">
+                <div class="inputs">
+                    <input type="number" name="input" id="num1" placeholder="NUM1">
+                    <span id="operation">__</span>
+                    <input type="number" name="input" id="num2" placeholder="NUM2">
+                    <span>=</span>
+                    <span id="answer">___</span>
+                </div>
+                <div class="answer"></div>
+                <div class="buttons">
+                    <button onclick="operation.innerHTML = '+'">+</button>
+                    <button onclick="operation.innerHTML = '-'">-</button>
+                    <button onclick="operation.innerHTML = '*'">*</button>
+                    <button onclick="operation.innerHTML = '/'">/</button>
+                    <button onclick="operation.innerHTML = '%'">%</button>
+                    <button onclick="calculate(operation.innerHTML)">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/task9.js"></script>
+</body>
+</html>
