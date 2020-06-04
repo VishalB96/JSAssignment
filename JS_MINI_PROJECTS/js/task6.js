@@ -19,7 +19,6 @@ window.onload = setInterval(
     sec = sec < 10 ? "0" + sec : sec;
     
     document.getElementById("op1").innerHTML = 
-    "TODAY is "+day_names[day]+" "+date+" "+month_names[month]+"<br> TIME : "
-    +hr+"&#58;"+min+"&#58;"+sec+" "+meridium;
+    `TODAY is ${day_names[day]} ${date} ${month_names[month]}<br> TIME : ${hr}&#58;${min}&#58;${sec} ${meridium}`;
 }
 ,1000);
