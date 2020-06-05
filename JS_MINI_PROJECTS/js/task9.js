@@ -15,13 +15,14 @@ function add(a,b){
 }
 
 function sub(a,b){
-    let x = arguments.length,i,sub=0;
+    let x = arguments.length,i;
+    let sub =arguments[0].value;
     if(x<2){
         alert("Enter sufficient inputs");
         return 0;
-    }
-    for(i=0;i<x;i++){
-        sub=arguments[i].value-sub;
+    }    
+    for(i=1;i<x;i++){
+        sub-=arguments[i].value;
     }
     return sub;
 }
@@ -39,17 +40,21 @@ function mul(a,b){
 }
 
 function divi(a,b){
-    let x = arguments.length,i,div=1;
+    let x = arguments.length,i;
+    let div =  arguments[0].value;
     if(x<2){
         alert("Enter sufficient inputs");
         return 0;
     }
-    for(i=0;i<x;i++){
-        div=arguments[i].value/div;
+    for(i=1;i<x;i++){
+        div/=arguments[i].value;
     }
     return div;
 }
 
+function percent(a,b){
+    return divi(a,b)*100;
+}
     function calculate(a){
         let x = document.getElementsByTagName("input");
         let op;
@@ -64,6 +69,9 @@ function divi(a,b){
         }
         if(a=="/"){
             op = divi.apply(null,x);
+        }
+        if(a=="%"){
+            op = percent.apply(null,x);
         }
         document.getElementById("answer").innerHTML = op;
         
